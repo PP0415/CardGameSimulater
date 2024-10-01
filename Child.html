@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>ACGリモート対戦ツールディスコ表示画面</title>
+    <link rel="stylesheet" href="css/ACG.css">
+    <script src="js/Child.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7MJLCETL3F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-7MJLCETL3F');
+    </script>
+</head>
+<body oncontextmenu="return false;">
+    <div class="Flamerow">
+        <div class="Flamerow">
+            <div id="Exclusion" class="Flamecolumn">
+                Exclusion <span id="ExclusionCount">(0)</span>
+                <div id="ExclusionSpace" class="CardSpace">
+
+                </div>
+            </div>
+            <div id="Monster" class="Flamecolumn">
+                <div class="Flamerow">
+                    MonsterArea
+                </div>
+                <div id="MonsterArea" class="Flamerow">
+
+                </div>
+            </div>
+            <div id="Drop" class="Flamecolumn">
+                Drop <span id="DropCount">(0)</span>
+                <div id="DropSpace" class="CardSpace">
+
+                </div>
+            </div>
+            <div id="Pile" class="Flamecolumn">
+                Pile
+                <div id="PileSpace" class="CardSpace">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Flamecolumn">
+        <div class="Flamerow">
+            <div id="LandDeck" class="Flamecolumn">
+                LandDeck <span id="LandDeckCount">(0)</span>
+                <div id="LandDeckViewer"></div>
+            </div>
+            <div id="Land" class="Flamecolumn">
+                <div class="Flamerow">
+                    LandArea
+                </div>
+                <div id="LandArea" class="Flamerow">
+
+                </div>
+            </div>
+            <div id="Deck" class="Flamecolumn">
+                Deck <span id="DeckCount">(0)</span>
+                <div id="DeckViewer"></div>
+            </div>
+            <div id="DeckZone" class="Flamecolumn" style="display: none;">
+                <div class="Flamerow">
+                    Deck
+                </div>
+                <div id="DeckCardSpace" class="CardSpace">
+
+                </div>
+            </div>
+            <div id="LandDeckZone" class="Flamecolumn" style="display: none;">
+                <div class="Flamerow">
+                    Land
+                </div>
+                <div id="LandDeckCardSpace" class="CardSpace">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="Flamerow">
+        <div id="Life" class="Flamecolumn">
+            <div id="boxTitle">
+                <div>LifeCounter</div>
+            </div>
+            <div id="LifeCounter" class="damageBox"></div>
+        </div>
+        <div id="Hand" class="FlameMarker">
+            Hand <span id="HandCount">(0)</span> <div id="HandViewer"></div>
+            <div id="HandSpace" class="CardSpace">
+
+            </div>
+        </div>
+        <div id="FreeZoneCommand" class="Flamecolumn">
+        </div>
+        <div id="FreeZone" class="FlameMarker">
+            FreeZone <div id="FreeZoneViewer"></div>
+            <div id="FreeZoneSpace" class="CardSpace">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

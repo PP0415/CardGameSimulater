@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>ACGリモート対戦ツール</title>
+    <link rel="stylesheet" href="css/ACG.css">
+    <script src="js/Sortable.js" defer></script>
+    <script src="js/ACG.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7MJLCETL3F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7MJLCETL3F');
+    </script>
+</head>
+
+<body oncontextmenu="return false;">
+    <div class="Flamerow" style=" background: white;">
+        ACGリモート対戦ツール:P.P
+        <button id="ChildWindowOpen">ディスコ用Window</button>
+        <button id="Reset">リセット</button>
+    </div>
+    <div id="SetArea" class="Flamerow">
+        <!-- ?X???[?u -->
+        <div class="Flamecolumn">
+            PlayMat
+            <div class="file_button">
+                プレイマット選択
+                <input class="file_input" type="file" id="PlayMatSet" accept="image/*">
+            </div>
+        </div>
+        <div id="Sleeve" class="Flamecolumn">
+            Sleeve
+            <div class="file_button">
+                スリーブ選択
+                <input class="file_input" type="file" id="SleeveSet" accept="image/*">
+            </div>
+            <div id="SleeveSpace" class="DetaCard">
+                <img src="img/ACGSleeve.jpg" alt="?X???[?u" width="126" height="176">
+            </div>
+        </div>
+        <!-- ?????h?X???[?u -->
+        <div id="LandSleeve" class="Flamecolumn">
+            LandSleeve
+            <div class="file_button">
+                トークンスリーブ選択
+                <input class="file_input" type="file" id="LandSleeveSet" accept="image/*">
+            </div>
+            <div id="LandSleeveSpace" class="DetaCard">
+                <img src="img/ACGLandSleeve.jpg" alt="?????h?X???[?u" width="126" height="176">
+            </div>
+        </div>
+        <!-- ?g?[?N???X???[?u -->
+        <div id="LandSleeve" class="Flamecolumn">
+            TokenSleeve
+            <div class="file_button">
+                トークンスリーブ選択
+                <input class="file_input" type="file" id="TokenSleeveSet" accept="image/*">
+            </div>
+            <div id="TokenSleeveSpace" class="DetaCard">
+                <img src="img/ACGTokenSleeve.jpg" alt="?g?[?N???X???[?u" width="126" height="176">
+            </div>
+        </div>
+        <div id="Token" class="Flamecolumn">
+            Token
+            <button type="button" id="TokenViewer" class="off">非閲覧中</button>
+            <div class="file_button">
+                トークン選択
+                <input class="file_input" type="file" id="TokenSet" accept="image/*" multiple>
+            </div>
+        </div>
+        <div id="TokenZone" class="Flamecolumn" style="display: none;">
+            <div class="Flamerow">
+                Token
+            </div>
+            <div id="TokenCardSpace" class="CardSpace">
+
+            </div>
+        </div>
+    </div>
+    <div class="Flamerow">
+        <div class="Flamerow">
+            <div id="Exclusion" class="Flamecolumn">
+                Exclusion <span id="ExclusionCount">(0)</span>
+                <button type="button" id="ExclusionToFreeZone">全てフリーゾーン</button>
+                <div id="ExclusionSpace" class="CardSpace">
+
+                </div>
+            </div>
+            <div id="Monster" class="Flamecolumn">
+                <div class="Flamerow">
+                    MonsterArea
+                    <button type="button" id="CreateMonsterBox">+</button>
+                </div>
+                <div id="MonsterArea" class="Flamerow">
+
+                </div>
+            </div>
+            <div id="Drop" class="Flamecolumn">
+                Drop <span id="DropCount">(0)</span>
+                <button type="button" id="DropToFreeZone">全てフリーゾーン</button>
+                <div id="DropSpace" class="CardSpace">
+
+                </div>
+            </div>
+            <div id="Pile" class="Flamecolumn">
+                Pile
+                <button type="button" id="PileToFreeZone">全てフリーゾーン</button>
+                <div id="PileSpace" class="CardSpace">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Flamecolumn">
+        <div class="Flamerow">
+            <div id="LandDeck" class="Flamecolumn">
+                LandDeck <span id="LandDeckCount">(0)</span>
+                <button type="button" id="LandDeck1Draw">1ドロー</button>
+                <button type="button" id="LandDeck1Drop">1ドロップ</button>
+                <button type="button" id="LandDeck1FrontFreeZone">1表フリー</button>
+                <button type="button" id="LandDeck1BackFreeZone">1裏フリー</button>
+                <button type="button" id="LandDeckShuffle">シャッフル</button>
+                <button type="button" id="LandDeckViewer" class="off">非閲覧中</button>
+                <div class="file_button">
+                    ランド選択
+                    <input class="file_input" type="file" id="LandDeckSet" accept="image/*" multiple>
+                </div>
+            </div>
+            <div id="Land" class="Flamecolumn">
+                <div class="Flamerow">
+                    LandArea
+                    <button type="button" id="CreateLandBox">+</button>
+                </div>
+                <div id="LandArea" class="Flamerow">
+
+                </div>
+            </div>
+            <div id="Deck" class="Flamecolumn">
+                Deck <span id="DeckCount">(0)</span>
+                <button type="button" id="Deck1Draw">1ドロー</button>
+                <button type="button" id="Deck1Drop">1ドロップ</button>
+                <button type="button" id="Deck1FrontFreeZone">1表フリー</button>
+                <button type="button" id="Deck1BackFreeZone">1裏フリー</button>
+                <button type="button" id="DeckShuffle">シャッフル</button>
+                <button type="button" id="DeckViewer" class="off">非閲覧中</button>
+                <div class="file_button">
+                    デッキ選択
+                    <input class="file_input" type="file" id="DeckSet" accept="image/*" multiple>
+                </div>
+            </div>
+            <div id="DeckZone" class="Flamecolumn" style="display: none;">
+                <div class="Flamerow">
+                    Deck
+                </div>
+                <div id="DeckCardSpace" class="CardSpace">
+
+                </div>
+            </div>
+            <div id="LandDeckZone" class="Flamecolumn" style="display: none;">
+                <div class="Flamerow">
+                    Land
+                </div>
+                <div id="LandDeckCardSpace" class="CardSpace">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="Flamerow">
+        <div id="Life" class="Flamecolumn">
+            <div id="boxTitle">
+                <div>LifeCounter</div>
+                <a id="LifeUp" class="btn01">▲</a>
+                <input id="LifeCounter" type="text" name="num" class="damageBox">
+                <a id="LifeDown" class="btn01">▼</a>
+            </div>
+        </div>
+        <div id="Hand" class="FlameMarker">
+            Hand <span id="HandCount">(0)</span> <button type="button" class="off" id="HandViewer">非公開中</button>
+            <button type="button" id="HandToFreeZone">全てフリーゾーン</button>
+            <div id="HandSpace" class="CardSpace">
+
+            </div>
+        </div>
+        <div id="FreeZoneCommand" class="Flamecolumn">
+            FreeZoneCommand
+            <button type="button" id="FreeZoneToHand">全て手札</button>
+            <button type="button" id="FreeZoneToDrop">全てドロップ</button>
+            <button type="button" id="FreeZoneToDeck">全てデッキ下</button>
+            <button type="button" id="FreeZoneFront">全て表向き</button>
+            <button type="button" id="FreeZoneBack">全て裏向き</button>
+        </div>
+        <div id="FreeZone" class="FlameMarker">
+            FreeZone <button type="button" class="off" id="FreeZoneViewer">非公開中</button>
+            <div id="FreeZoneSpace" class="CardSpace">
+
+            </div>
+        </div>
+    </div>
+    <div id="CardMenu">
+        <ul>
+            <li id="CardReverse">向き反転</li>
+            <li id="CardRest/Stand">レスト/スタンド</li>
+            <li id="CardDeckTop">デッキトップ</li>
+            <li id="CardDeckButtom">デッキボトム</li>
+        </ul>
+    </div>
+</body>
+
+</html>

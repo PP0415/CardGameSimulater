@@ -1,0 +1,4 @@
+    setTimeout(function () {
+
+    }, 100);
+    douki()
